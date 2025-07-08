@@ -9,168 +9,211 @@
     </script>
 </head>
 <body>
-    <div style="position: fixed; top: 24px; right: 40px; z-index: 1000; display: flex; align-items: center;">
-        <span style="font-size: 17px; color: #222; margin-right: 10px;">Theme</span>
-        <button id="theme-toggle" style="width: 60px; height: 28px; border-radius: 14px; border: 1px solid #bbb; background: #eee; cursor: pointer; display: flex; align-items: center; padding: 3px; transition: background 0.3s, border 0.3s;">
-            <span id="toggle-knob" style="display: block; width: 22px; height: 22px; border-radius: 50%; background: #0078d7; box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: transform 0.35s cubic-bezier(.68,-0.55,.27,1.55), background 0.3s;"></span>
+    <div style="position: fixed; top: 3vw; right: 8vw; z-index: 1000; display: flex; align-items: center; margin-top: 1vw;">
+        <span style="font-size: 2vw; color: #222; margin-right: 2vw;">Theme</span>
+        <button id="theme-toggle" style="width: 15vw; max-width: 60px; min-width: 44px; height: 7vw; max-height: 28px; min-height: 22px; border-radius: 50vw; border: 1px solid #bbb; background: #eee; cursor: pointer; display: flex; align-items: center; padding: 0.3vw; transition: background 0.3s, border 0.3s;">
+            <span id="toggle-knob" style="display: block; width: 5vw; max-width: 22px; min-width: 16px; height: 5vw; max-height: 22px; min-height: 16px; border-radius: 50%; background: #0078d7; box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: transform 0.35s cubic-bezier(.68,-0.55,.27,1.55), background 0.3s;"></span>
         </button>
     </div>
-    <div name="first" style="display:flex; align-items:flex-start; margin-top: 80px;">
-        <img src="Photo.jpg" alt="Profile Picture" style="margin-left:150px; margin-right:100px; width: 200px; height: 220px; object-fit: cover; border:12px; border-color:black;">
-        <div>
-            <h1>Adithya Harsen R V</h1>
+    <div name="first" style="display:flex; flex-wrap: wrap; align-items:flex-start; margin-top: 5vw;">
+        <img src="Photo.jpg" alt="Profile Picture" style="margin-left:8vw; margin-top: 3vw; margin-right:8vw; width: 30vw; max-width: 200px; min-width: 120px; height: 33vw; max-height: 220px; min-height: 120px; object-fit: cover; border:12px; border-color:black;">
+        <div name="desc1" style="min-width: 10vw;">
+            <h1 style="font-size: 3vw; min-font-size: 22px;">Adithya Harsen R V</h1>
             <br>
-            <p><strong>Personal email:</strong> harsenadithya@gmail.com &emsp;&emsp;&emsp;&emsp; <strong>College email:</strong> 126003009@sastra.ac.in</p>
-            <p><strong>Phone:</strong> 9342456212 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; <strong>Whatsapp:</strong> 9486043779</p>
-            <p><strong>Role:</strong> Web/App Developer</p>
+            <p style="font-size: 1.5vw;"><strong>Personal email:</strong> harsenadithya@gmail.com</p>
+            <p style="font-size: 1.5vw;"><strong>Phone:</strong> 9342456212</p>
+            <p style="font-size: 1.5vw;"><strong>Role:</strong> Web/App Developer</p>
+        </div>
+        <div style="width: 6vw; min-width: 20px;"></div>
+        <div name="desc2" style="min-width: 30vw;">
+            <br><br><br><br><br><br><br><br><br>
+            <p  style="font-size: 1.5vw;"><strong>College email:</strong> 126003009@sastra.ac.in</p>
+            <p  style="font-size: 1.5vw;"><strong>Whatsapp:</strong> 9486043779</p>
         </div>
     </div>
     <br><br>
-    <div style="margin-left: 50px; display: flex; align-items: center; font-size: 20px; font-weight: bold;">
-        <a href="https://github.com/" target="_blank" style="text-decoration:none; margin: 0 150px;">Github</a>
-        <span style="margin: 0 75px;">|</span>
-        <a href="https://www.linkedin.com/" target="_blank" style="text-decoration:none; margin: 0 150px;">LinkedIn</a>
-        <span style="margin: 0 75px;">|</span>
-        <a href="https://www.instagram.com/" target="_blank" style="text-decoration:none; margin: 0 150px;">Instagram</a>
+    <div style="margin-left: 3vw; display: flex; flex-wrap: wrap; align-items: center; font-size: 2vw; font-weight: bold;">
+        <a href="https://github.com/" target="_blank" style="text-decoration:none; margin: 0 8vw;">Github</a>
+        <span style="margin: 0 4vw;">|</span>
+        <a href="https://www.linkedin.com/" target="_blank" style="text-decoration:none; margin: 0 8vw;">LinkedIn</a>
+        <span style="margin: 0 4vw;">|</span>
+        <a href="https://www.instagram.com/" target="_blank" style="text-decoration:none; margin: 0 8vw;">Instagram</a>
     </div>
     <style>
-    .timeline-container {
-        margin: 60px auto 0 auto;
-        padding: 40px 0;
-        width: 90vw;
-        overflow-x: auto;
-        overflow-y: hidden;
-        white-space: nowrap;
-        position: relative;
-        background: #f7f7f7;
-        border-radius: 16px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    }
-    .timeline {
-        display: flex;
-        align-items: center;
-        min-width: 1200px;
-        height: 220px;
-        position: relative;
-    }
-    .timeline-event {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-width: 220px;
-        margin: 0 40px;
-        position: relative;
-        z-index: 2;
-        animation: fadeInUp 1s;
-    }
-    .timeline-event .dot {
-        width: 28px;
-        height: 28px;
-        background: #222;
-        border-radius: 50%;
-        border: 4px solid #fff;
-        box-shadow: 0 0 0 4px #222;
-        margin-bottom: 12px;
-        transition: background 0.3s;
-    }
-    .timeline-event .dot.current {
-        background: #0078d7;
-        box-shadow: 0 0 0 6px #0078d7;
-    }
-    .timeline-event .date {
-        font-size: 16px;
-        font-weight: bold;
-        margin-bottom: 8px;
-        color: #0078d7;
-    }
-    .timeline-event .desc {
-        font-size: 15px;
-        color: #333;
-        text-align: center;
-        max-width: 180px;
-    }
-    .timeline-bar {
-        position: absolute;
-        top: 48px;
-        left: 0;
-        height: 4px;
-        width: 150%;
-        background: linear-gradient(90deg, #0078d7 60%, #bbb 100%);
-        z-index: 1;
-        border-radius: 2px;
-    }
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(40px);}
-        to { opacity: 1; transform: translateY(0);}
-    }
-    .timeline-container::-webkit-scrollbar {
-        height: 10px;
-    }
-    .timeline-container::-webkit-scrollbar-thumb {
-        background: #bbb;
-        border-radius: 5px;
-    }
-    .chat-widget-container {
-        position: fixed;
-        bottom: 20px;  /* padding from bottom */
-        right: 20px;   /* padding from right */
-        z-index: 9999;
-    }
-    /* Toggle button animation */
-    #theme-toggle {
-        position: relative;
-        overflow: hidden;
-        background: #eee;
-        border: 1px solid #bbb;
-        transition: background 0.3s, border 0.3s;
-    }
-    #theme-toggle.dark {
-        background: #23272f !important;
-        border: 1px solid #444 !important;
-    }
-    #theme-toggle:active #toggle-knob {
-        transform: scale(1.1);
-    }
-    #toggle-knob {
-        transition: transform 0.35s cubic-bezier(.68,-0.55,.27,1.55), background 0.3s;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-    /* Dark theme styles */
-    body.dark {
-        background: #181c23 !important;
-        color: #e6e6e6 !important;
-    }
-    body.dark .timeline-container {
-        background: #23272f !important;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.25);
-    }
-    body.dark .timeline-event .dot {
-        background: #bbb !important;
-        box-shadow: 0 0 0 4px #444 !important;
-    }
-    body.dark .timeline-event .dot.current {
-        background: #0078d7 !important;
-        box-shadow: 0 0 0 6px #0078d7 !important;
-    }
-    body.dark .timeline-event .date {
-        color: #4eaaff !important;
-    }
-    body.dark .timeline-event .desc {
-        color: #e6e6e6 !important;
-    }
-    body.dark .timeline-bar {
-        background: linear-gradient(90deg, #4eaaff 60%, #444 100%) !important;
-    }
-    body.dark section, body.dark h2, body.dark h3, body.dark p, body.dark span, body.dark strong, body.dark li {
-        color: #e6e6e6 !important;
-    }
-    body.dark a {
-        color: #4eaaff !important;
-    }
-    body.dark div[style*="background: #fff"] {
-        background: #23272f !important;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.25) !important;
-    }
+        html {
+            font-size: 16px;
+        }
+        @media (max-width: 900px) {
+            html { font-size: 14px; }
+        }
+        @media (max-width: 600px) {
+            html { font-size: 12px; }
+        }
+        .timeline-container {
+            margin: 8vw auto 0 auto;
+            padding: 6vw 0;
+            width: 90vw;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            position: relative;
+            background: oklch(94.007% 0.00011 271.152);
+            border-radius: 4vw;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+        .timeline {
+            display: flex;
+            align-items: center;
+            min-width: 100vw;
+            height: 12vw;
+            min-height: 2vw;
+            position: top;
+        }
+        .timeline-event {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 19vw;
+            margin: 7vw 7vw 0 5vw;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s;
+        }
+        .timeline-event .dot {
+            width: 2vw;
+            max-width: 19px;
+            min-width: 9px;
+            height: 2vw;
+            max-height: 19px;
+            min-height: 9px;
+            background: #222;
+            border-radius: 50%;
+            border: 0.5vw solid #fff;
+            box-shadow: 0 0 0 0.7vw #222;
+            margin-bottom: 1.5vw;
+            transition: background 0.3s;
+        }
+        .timeline-event .dot.current {
+            background: #0078d7;
+            box-shadow: 0 0 0 1vw #0078d7;
+        }
+        .timeline-event .date {
+            font-size: 2vw;
+            min-font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 1vw;
+            color: #0078d7;
+        }
+        .timeline-event .desc {
+            font-size: 1.7vw;
+            min-font-size: 12px;
+            color: #333;
+            text-align: center;
+            max-width: 22vw;
+            min-width: 120px;
+        }
+        .timeline-bar {
+            position: absolute;
+            top: 6vw;
+            left: 0;
+            height: 0.5vw;
+            min-height: 4px;
+            width: 225%;
+            background: linear-gradient(90deg, #0078d7 60%, #bbb 100%);
+            z-index: 1;
+            border-radius: 0.3vw;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .timeline-container::-webkit-scrollbar {
+            height: 1vw;
+            min-height: 8px;
+        }
+        .timeline-container::-webkit-scrollbar-thumb {
+            background: #bbb;
+            border-radius: 0.5vw;
+        }
+        .chat-widget-container {
+            position: fixed;
+            bottom: 3vw;
+            right: 3vw;
+            z-index: 9999;
+        }
+        #theme-toggle {
+            position: relative;
+            overflow: hidden;
+            background: #eee;
+            border: 1px solid #bbb;
+            transition: background 0.3s, border 0.3s;
+        }
+        #theme-toggle.dark {
+            background: #23272f !important;
+            border: 1px solid #444 !important;
+        }
+        #theme-toggle:active #toggle-knob {
+            transform: scale(1.1);
+        }
+        #toggle-knob {
+            transition: transform 0.35s cubic-bezier(.68,-0.55,.27,1.55), background 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        body.dark {
+            background: #181c23 !important;
+            color: #e6e6e6 !important;
+        }
+        body.dark .timeline-container {
+            background: #23272f !important;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+        }
+        body.dark .timeline-event .dot {
+            background: #bbb !important;
+            box-shadow: 0 0 0 0.7vw #444 !important;
+        }
+        body.dark .timeline-event .dot.current {
+            background: #0078d7 !important;
+            box-shadow: 0 0 0 1vw #0078d7 !important;
+        }
+        body.dark .timeline-event .date {
+            color: #4eaaff !important;
+        }
+        body.dark .timeline-event .desc {
+            color: #e6e6e6 !important;
+        }
+        body.dark .timeline-bar {
+            background: linear-gradient(90deg, #4eaaff 60%, #444 100%) !important;
+        }
+        body.dark section, body.dark h2, body.dark h3, body.dark p, body.dark span, body.dark strong, body.dark li {
+            color: #e6e6e6 !important;
+        }
+        body.dark a {
+            color: #4eaaff !important;
+        }
+        body.dark div[style*="background: #fff"] {
+            background: #23272f !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.25) !important;
+        }
+        /* Responsive styles */
+        @media (max-width: 900px) {
+            .timeline { min-width: 900px; height: 38vw; }
+            .timeline-event { min-width: 34vw; }
+            .timeline-event .desc { max-width: 30vw; }
+        }
+        @media (max-width: 600px) {
+            .timeline-container { padding: 4vw 0; }
+            .timeline { min-width: 600px; height: 60vw; }
+            .timeline-event { min-width: 50vw; margin: 0 3vw; }
+            .timeline-event .desc { max-width: 40vw; }
+            .timeline-bar { top: 10vw; }
+            .chat-widget-container { bottom: 5vw; right: 5vw; }
+            div[name="first"] { flex-direction: column; align-items: flex-start !important; }
+            div[name="desc1"], div[name="desc2"] { min-width: 80vw !important; }
+            img[alt="Profile Picture"] { margin-left: 0; margin-right: 0; width: 60vw !important; height: 60vw !important; }
+            h1 { font-size: 8vw !important; }
+            .timeline-event .date, .timeline-event .desc { font-size: 3vw !important; }
+            .timeline-event .dot { width: 7vw !important; height: 7vw !important; }
+        }
     </style>
     <div class="timeline-container">
         <div class="timeline">
@@ -219,87 +262,87 @@
             </div>
         </div>
     </div>
-    <div style="margin: 60px auto 0 auto; width: 90vw; max-width: 1200px;">
-        <section style="margin-bottom: 40px;">
-            <h2 style="color: #0078d7; border-bottom: 2px solid #0078d7; padding-bottom: 8px;">Education</h2>
+    <div style="margin: 8vw auto 0 auto; width: 96vw; max-width: 1200px;">
+        <section style="margin-bottom: 5vw;">
+            <h2 style="color: #0078d7; border-bottom: 0.3vw solid #0078d7; padding-bottom: 0.5vw; font-size: 3vw;">Education</h2>
             <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 18px;">
+                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
                     <strong>B.Tech - Computer Science and Engineering</strong> - <span>SASTRA Deemed University</span> <br>
                     <span style="color: #555;">2022 - Present</span> | <span style="color: #0078d7;">8.2482</span>
                 </li>
-                <li style="margin-bottom: 18px;">
+                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
                     <strong>12th Standard</strong> - <span>DNU SMBM National Public School</span> <br>
                     <span style="color: #555;">2020 - 2022</span> | <span style="color: #0078d7;">96.6%</span>
                 </li>
-                <li style="margin-bottom: 18px;">
+                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
                     <strong>10th Standard</strong> - <span>Shri Gurumuki Vidhyasshram</span> <br>
                     <span style="color: #555;">2009 - 2020</span> | <span style="color: #0078d7;">94%</span>
                 </li>
             </ul>
         </section>
         <section>
-            <h2 style="color: #0078d7; border-bottom: 2px solid #0078d7; padding-bottom: 8px;">Experience</h2>
+            <h2 style="color: #0078d7; border-bottom: 0.3vw solid #0078d7; padding-bottom: 0.5vw; font-size: 3vw;">Experience</h2>
             <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 18px;">
+                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
                     <strong>Online Intern - Software Developer</strong> | <span>Fipsar Solutions</span> <br>
                     <span style="color: #555;">July-August 2025</span>
                 </li>
-                <li style="margin-bottom: 18px;">
+                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
                     <strong>Android App Developer</strong> | <span>Mini-Project</span> <br>
                     <span style="color: #555;">Jan-April 2025</span>
                 </li>
-                <li style="margin-bottom: 18px;">
+                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
                     <strong>Frontend Developer</strong> | <span>Tally Code Brewers Hackathon</span> <br>
                     <span style="color: #555;">July 2024</span>
                 </li>
-                <li style="margin-bottom: 18px;">
+                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
                     <strong>Summer Intern - Java Developer</strong> | <span>Interlace India</span> <br>
                     <span style="color: #555;">June 2024</span>
                 </li>
-                <li>
+                <li style="font-size: 1.5vw;">
                     <strong>Member</strong> | <span>KS Marketing and Corporate Relations, SASTRA</span> <br>
                     <span style="color: #555;">2024 - Present</span>
                 </li>
             </ul>
         </section>
     </div>
-    <div style="margin: 60px auto 60px auto; width: 90vw; max-width: 1200px;">
-        <h2 style="color: #0078d7; border-bottom: 2px solid #0078d7; padding-bottom: 8px; margin-bottom: 32px;">Projects</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: flex-start;">
+    <div style="margin: 8vw auto 8vw auto; width: 96vw; max-width: 1200px;">
+        <h2 style="color: #0078d7; border-bottom: 0.3vw solid #0078d7; padding-bottom: 1vw; margin-bottom: 4vw; font-size: 3vw;">Projects</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 4vw; justify-content: flex-start;">
             <!-- Project Card 4 -->
-            <div style="background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 320px; padding: 20px; display: flex; flex-direction: column; align-items: center;">
-                <img src="project4.png" alt="Project 4" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
-                <h3 style="margin: 18px 0 6px 0; color: #0078d7;">Portfolio Website</h3>
-                <div style="font-size: 15px; color: #555; margin-bottom: 10px;">June 2025</div><br><br>
-                <p style="color: #333; text-align: center;">Personal portfolio website built with HTML, CSS and JavaScript along with the help of AI tools to showcase my skills and adaptability to the new and useful tools/technologies.<br><br><br><br>
-                    <a href=" https://adithyaharsen.github.io/Portfolio/" target="_blank" style="color: #0078d7; text-decoration: underline; display: inline-block; margin-top: 8px;">View Project</a>
+            <div style="background: #fff; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 19vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
+                <img src="project4.png" alt="Project 4" style="width: 100%; height: 22vw; max-height: 180px; min-height: 100px; object-fit: cover; border-radius: 2vw;">
+                <h3 style="margin: 2vw 0 1vw 0; color: #0078d7; font-size: 1.5vw;">Portfolio Website</h3>
+                <div style="font-size: 1vw; color: #555; margin-bottom: 1vw;">June 2025</div><br><br>
+                <p style="color: #333; text-align: center; font-size: 1vw;">Personal portfolio website built with HTML, CSS and JavaScript along with the help of AI tools to showcase my skills and adaptability to the new and useful tools/technologies.<br><br><br><br>
+                    <a href=" https://adithyaharsen.github.io/Portfolio/" target="_blank" style="color: #0078d7; text-decoration: underline; display: inline-block; margin-top: 1vw;">View Project</a>
                 </p>
             </div>
             <!-- Project Card 3 -->
-            <div style="background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 320px; padding: 20px; display: flex; flex-direction: column; align-items: center;">
-                <img src="project3.png" alt="Project 3" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
-                <h3 style="margin: 18px 0 6px 0; color: #0078d7;">Farm Monitor - Android App</h3>
-                <div style="font-size: 15px; color: #555; margin-bottom: 10px;">Jan-April 2025</div>
-                <p style="color: #333; text-align: center;">Developed using React-Native, this app displays real-time data and it's previous data logs by retrieving from Thingspeak.<br>Which in turn receives 7 parameters of data collected and transmitted through IoT sensors from a remote field.<br>This app is also integrated with SVM(a Machine Learning Model) for Anomaly Detection.<br><br>
-                    <a href="https://github.com/Adithyaharsen/Farm-Monitor" target="_blank" style="color: #0078d7; text-decoration: underline; display: inline-block; margin-top: 8px;">View Project</a>
+            <div style="background: #fff; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 19vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
+                <img src="project3.png" alt="Project 3" style="width: 100%; height: 22vw; max-height: 180px; min-height: 100px; object-fit: cover; border-radius: 2vw;">
+                <h3 style="margin: 2vw 0 1vw 0; color: #0078d7; font-size: 1.5vw;">Farm Monitor - Android App</h3>
+                <div style="font-size: 1vw; color: #555; margin-bottom: 1vw;">Jan-April 2025</div>
+                <p style="color: #333; text-align: center; font-size: 1vw;">Developed using React-Native, this app displays real-time data and it's previous data logs by retrieving from Thingspeak.<br>Which in turn receives 7 parameters of data collected and transmitted through IoT sensors from a remote field.<br>This app is also integrated with SVM(a Machine Learning Model) for Anomaly Detection.<br><br>
+                    <a href="https://github.com/Adithyaharsen/Farm-Monitor" target="_blank" style="color: #0078d7; text-decoration: underline; display: inline-block; margin-top: 1vw;">View Project</a>
                 </p>
             </div>
             <!-- Project Card 2 -->
-            <div style="background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 320px; padding: 20px; display: flex; flex-direction: column; align-items: center;">
-                <img src="project2.jpg" alt="Project 2" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
-                <h3 style="margin: 18px 0 6px 0; color: #0078d7;">Online Compiler</h3>
-                <div style="font-size: 15px; color: #555; margin-bottom: 10px;">July 2024</div>
-                <p style="color: #333; text-align: center;">Developed the frontend for an online compiler website using React.js , focusing on responsive UI and smooth user experience.<br>This online compiler can compile 6 different programming languages like javascript, typescript, Java, php and C#.<br><br><br>
-                    <a href="https://github.com/Adithyaharsen/CAD-Online-Compiler" target="_blank" style="color: #0078d7; text-decoration: underline; display: inline-block; margin-top: 8px;">View Project</a>
+            <div style="background: #fff; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 19vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
+                <img src="project2.jpg" alt="Project 2" style="width: 100%; height: 22vw; max-height: 180px; min-height: 100px; object-fit: cover; border-radius: 2vw;">
+                <h3 style="margin: 2vw 0 1vw 0; color: #0078d7; font-size: 1.5vw;">Online Compiler</h3>
+                <div style="font-size: 1vw; color: #555; margin-bottom: 1vw;">July 2024</div>
+                <p style="color: #333; text-align: center; font-size: 1vw;">Developed the frontend for an online compiler website using React.js , focusing on responsive UI and smooth user experience.<br>This online compiler can compile 6 different programming languages like javascript, typescript, Java, php and C#.<br><br><br>
+                    <a href="https://github.com/Adithyaharsen/CAD-Online-Compiler" target="_blank" style="color: #0078d7; text-decoration: underline; display: inline-block; margin-top: 1vw;">View Project</a>
                 </p>
             </div>
             <!-- Project Card 1 -->
-            <div style="background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 320px; padding: 20px; display: flex; flex-direction: column; align-items: center;">
-                <img src="project1.png" alt="Project 1" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
-                <h3 style="margin: 18px 0 6px 0; color: #0078d7;">IPL Dashboard</h3>
-                <div style="font-size: 15px; color: #555; margin-bottom: 10px;">June 2024</div>
-                <p style="color: #333; text-align: center;">Developed using various Spring Frameworks, React.js, Bootstrap and Rest API’s.<br>This website can categorize matches year-wise as well as team-wise.<br>It also has separate Team-Dashboard’s , Seasonal Points Table , Records (by Season and Overall) and more.<br>
-                    <a href="https://github.com/Adithyaharsen/IPL_Dashboard" target="_blank" style="color: #0078d7; text-decoration: underline; display: inline-block; margin-top: 8px;">View Project</a>
+            <div style="background: #fff; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 19vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
+                <img src="project1.png" alt="Project 1" style="width: 100%; height: 22vw; max-height: 180px; min-height: 100px; object-fit: cover; border-radius: 2vw;">
+                <h3 style="margin: 2vw 0 1vw 0; color: #0078d7; font-size: 1.5vw;">IPL Dashboard</h3>
+                <div style="font-size: 1vw; color: #555; margin-bottom: 1vw;">June 2024</div>
+                <p style="color: #333; text-align: center; font-size: 1vw;">Developed using various Spring Frameworks, React.js, Bootstrap and Rest API’s.<br>This website can categorize matches year-wise as well as team-wise.<br>It also has separate Team-Dashboard’s , Seasonal Points Table , Records (by Season and Overall) and more.<br>
+                    <a href="https://github.com/Adithyaharsen/IPL_Dashboard" target="_blank" style="color: #0078d7; text-decoration: underline; display: inline-block; margin-top: 1vw;">View Project</a>
                 </p>
             </div>
         </div>
