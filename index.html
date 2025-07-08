@@ -9,36 +9,6 @@
     </script>
 </head>
 <body>
-    <div style="position: fixed; top: 3vw; right: 8vw; z-index: 1000; display: flex; align-items: center; margin-top: 1vw;">
-        <span style="font-size: 2vw; color: #222; margin-right: 2vw;">Theme</span>
-        <button id="theme-toggle" style="width: 15vw; max-width: 60px; min-width: 44px; height: 7vw; max-height: 28px; min-height: 22px; border-radius: 50vw; border: 1px solid #bbb; background: #eee; cursor: pointer; display: flex; align-items: center; padding: 0.3vw; transition: background 0.3s, border 0.3s;">
-            <span id="toggle-knob" style="display: block; width: 5vw; max-width: 22px; min-width: 16px; height: 5vw; max-height: 22px; min-height: 16px; border-radius: 50%; background: #0078d7; box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: transform 0.35s cubic-bezier(.68,-0.55,.27,1.55), background 0.3s;"></span>
-        </button>
-    </div>
-    <div name="first" style="display:flex; flex-wrap: wrap; margin-top: 5vw;">
-        <img src="Photo.jpg" alt="Profile Picture" style="margin-left:8vw; margin-top: 3vw; margin-right:8vw; width: 12vw; height: 15vw; object-fit: cover; border:12px; border-color:black;">
-        <div name="desc1">
-            <h1 style="font-size: 2.2vw; ">Adithya Harsen R V</h1>
-            <br>
-            <p style="font-size: 1.5vw;"><strong>Personal email:</strong> harsenadithya@gmail.com</p>
-            <p style="font-size: 1.5vw;"><strong>Phone:</strong> 9342456212</p>
-            <p style="font-size: 1.5vw;"><strong>Role:</strong> Web/App Developer</p>
-        </div>
-        <div style="width: 6vw; "></div>
-        <div name="desc2">
-            <br><br><br><br><br><br><br>
-            <p  style="font-size: 1.5vw;"><strong>College email:</strong> 126003009@sastra.ac.in</p>
-            <p  style="font-size: 1.5vw;"><strong>Whatsapp:</strong> 9486043779</p>
-        </div>
-    </div>
-    <br><br>
-    <div style="margin-left: 3vw; display: flex; flex-wrap: wrap; align-items: center; font-size: 2vw; font-weight: bold;">
-        <a href="https://github.com/" target="_blank" style="text-decoration:none; margin: 0 8vw;">Github</a>
-        <span style="margin: 0 4vw;">|</span>
-        <a href="https://www.linkedin.com/" target="_blank" style="text-decoration:none; margin: 0 8vw;">LinkedIn</a>
-        <span style="margin: 0 4vw;">|</span>
-        <a href="https://www.instagram.com/" target="_blank" style="text-decoration:none; margin: 0 8vw;">Instagram</a>
-    </div>
     <style>
         html {
             font-size: 16px;
@@ -137,9 +107,11 @@
         }
         .chat-widget-container {
             position: fixed;
-            bottom: 3vw;
-            right: 3vw;
+            bottom: 5vw;
+            right: 5vw;
             z-index: 9999;
+            width: 10vw;
+            height: 10vw;
         }
         #theme-toggle {
             position: relative;
@@ -215,6 +187,38 @@
             .timeline-event .dot { width: 7vw !important; height: 7vw !important; }
         }
     </style>
+
+
+    <div style="position: fixed; top: 3vw; right: 8vw; z-index: 1000; display: flex; align-items: center; margin-top: 1vw;">
+        <span style="font-size: 2vw; color: #222; margin-right: 2vw;">Theme</span>
+        <button id="theme-toggle" style="width: 15vw; max-width: 60px; min-width: 44px; height: 7vw; max-height: 28px; min-height: 22px; border-radius: 50vw; border: 1px solid #bbb; background: #eee; cursor: pointer; display: flex; align-items: center; padding: 0.3vw; transition: background 0.3s, border 0.3s;">
+            <span id="toggle-knob" style="display: block; width: 5vw; max-width: 22px; min-width: 16px; height: 5vw; max-height: 22px; min-height: 16px; border-radius: 50%; background: #0078d7; box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: transform 0.35s cubic-bezier(.68,-0.55,.27,1.55), background 0.3s;"></span>
+        </button>
+    </div>
+    <div name="first" style="display:flex; flex-wrap: wrap;  margin-top: 5vw; align-items:center">
+        <img src="Photo.jpg" alt="Profile Picture" style="margin-left:8vw; margin-top: 2vw; margin-right:8vw; width: 12vw; height: 15vw; object-fit: cover; border:12px; border-color:black;">
+        <div name="desc1">
+            <h1 style="font-size: 2.2vw; ">Adithya Harsen R V</h1>
+            <br>
+            <p style="font-size: 1.5vw;"><strong>Personal email:</strong> harsenadithya@gmail.com</p>
+            <p style="font-size: 1.5vw;"><strong>Phone:</strong> 9342456212</p>
+            <p style="font-size: 1.5vw;"><strong>Role:</strong> Web/App Developer</p>
+        </div>
+        <div style="width: 6vw; "></div>
+        <div name="desc2">
+            <br><br><br>
+            <p  style="font-size: 1.5vw;"><strong>College email:</strong> 126003009@sastra.ac.in</p>
+            <p  style="font-size: 1.5vw;"><strong>Whatsapp:</strong> 9486043779</p>
+        </div>
+    </div>
+    <br><br>
+    <div style="margin-left: 3vw; display: flex; flex-wrap: wrap; align-items: center; font-size: 2vw; font-weight: bold;">
+        <a href="https://github.com/" target="_blank" style="text-decoration:none; margin: 0 8vw;">Github</a>
+        <span style="margin: 0 4vw;">|</span>
+        <a href="https://www.linkedin.com/" target="_blank" style="text-decoration:none; margin: 0 8vw;">LinkedIn</a>
+        <span style="margin: 0 4vw;">|</span>
+        <a href="https://www.instagram.com/" target="_blank" style="text-decoration:none; margin: 0 8vw;">Instagram</a>
+    </div>
     <div class="timeline-container">
         <div class="timeline">
             <div class="timeline-bar"></div>
@@ -262,44 +266,44 @@
             </div>
         </div>
     </div>
-    <div style="margin: 8vw auto 0 auto; width: 80vw; ">
-        <section style="margin-bottom: 5vw;">
-            <h2 style="color: #0078d7; border-bottom: 0.3vw solid #0078d7; padding-bottom: 0.5vw; font-size: 3vw;">Education</h2>
+    <div style="margin-left: 8vw; margin-top:3vw; width: 80vw; ">
+        <section style="margin-bottom: 2vw;">
+            <h2 style="color: #0078d7; border-bottom: 0.3vw solid #0078d7; padding-bottom: 0.5vw; font-size: 2.2vw;">Education</h2>
             <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
+                <li style="margin-bottom: 2vw; font-size: 1vw;">
                     <strong>B.Tech - Computer Science and Engineering</strong> - <span>SASTRA Deemed University</span> <br>
                     <span style="color: #555;">2022 - Present</span> | <span style="color: #0078d7;">8.2482</span>
                 </li>
-                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
+                <li style="margin-bottom: 2vw; font-size: 1vw;">
                     <strong>12th Standard</strong> - <span>DNU SMBM National Public School</span> <br>
                     <span style="color: #555;">2020 - 2022</span> | <span style="color: #0078d7;">96.6%</span>
                 </li>
-                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
+                <li style="margin-bottom: 2vw; font-size: 1vw;">
                     <strong>10th Standard</strong> - <span>Shri Gurumuki Vidhyasshram</span> <br>
                     <span style="color: #555;">2009 - 2020</span> | <span style="color: #0078d7;">94%</span>
                 </li>
             </ul>
         </section>
         <section>
-            <h2 style="color: #0078d7; border-bottom: 0.3vw solid #0078d7; padding-bottom: 0.5vw; font-size: 3vw;">Experience</h2>
+            <h2 style="color: #0078d7; border-bottom: 0.3vw solid #0078d7; padding-bottom: 0.5vw; font-size: 2.2vw;">Experience</h2>
             <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
+                <li style="margin-bottom: 2vw; font-size: 1vw;">
                     <strong>Online Intern - Software Developer</strong> | <span>Fipsar Solutions</span> <br>
                     <span style="color: #555;">July-August 2025</span>
                 </li>
-                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
+                <li style="margin-bottom: 2vw; font-size: 1vw;">
                     <strong>Android App Developer</strong> | <span>Mini-Project</span> <br>
                     <span style="color: #555;">Jan-April 2025</span>
                 </li>
-                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
+                <li style="margin-bottom: 2vw; font-size: 1vw;">
                     <strong>Frontend Developer</strong> | <span>Tally Code Brewers Hackathon</span> <br>
                     <span style="color: #555;">July 2024</span>
                 </li>
-                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
+                <li style="margin-bottom: 2vw; font-size: 1vw;">
                     <strong>Summer Intern - Java Developer</strong> | <span>Interlace India</span> <br>
                     <span style="color: #555;">June 2024</span>
                 </li>
-                <li style="font-size: 1.5vw;">
+                <li style="font-size: 1vw;">
                     <strong>Member</strong> | <span>KS Marketing and Corporate Relations, SASTRA</span> <br>
                     <span style="color: #555;">2024 - Present</span>
                 </li>
