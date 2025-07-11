@@ -94,7 +94,7 @@
         }
         @media (max-width: 600px) {
             .timeline-container { padding: 6vw 0; }
-            .timeline { height: 6vw; }
+            .timeline { height: 12vw; }
             .timeline-event { margin: 7vw 7vw 0 5vw; }
             .timeline-bar { top: 6vw; }
             .timeline-event .date { font-size: 2vw !important; }
@@ -167,16 +167,14 @@
         }
         /* Responsive styles */
         @media (max-width: 900px) {
-            .timeline { min-width: 900px; height: 38vw; }
-            .timeline-event { min-width: 34vw; }
-            .timeline-event .desc { max-width: 30vw; }
+            .timeline { min-width: 900px; height: 12vw; }
         }
     </style>
 
 
     <div style="position: fixed; top: 3vw; right: 8vw; z-index: 1000; display: flex; align-items: center; margin-top: 1vw;">
         <span style="font-size: 2vw; color: #222; margin-right: 2vw;">Theme</span>
-        <button id="theme-toggle" style="width: 6vw; height: 3vw; border-radius: 50vw; border: 1px solid #bbb; background: #eee; cursor: pointer; display: flex; align-items: center; padding: 0.3vw; transition: background 0.3s, border 0.3s;">
+        <button id="theme-toggle" style="width: 6vw; height: 3vw; border-radius: 50vw; border: 1px solid #bbb; background: #eee; cursor: pointer; display: flex; align-items: center; padding: 0.3vw; justify-content: flex-start; overflow: hidden; transition: background 0.3s, border 0.3s;">
             <span id="toggle-knob" style="display: block; width: 2vw; height: 2vw; border-radius: 50%; background: #0078d7; box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: transform 0.35s cubic-bezier(.68,-0.55,.27,1.55), background 0.3s;"></span>
         </button>
     </div>
@@ -345,7 +343,7 @@
             document.body.classList.add('dark');
             btn.classList.add('dark');
             btn.style.justifyContent = 'flex-end';
-            knob.style.transform = 'translateX(2px) scale(1.1) rotate(360deg)';
+            knob.style.transform = 'translateX(1vw) scale(1.1) rotate(360deg)';
             knob.style.background = '#4eaaff';
         } else {
             document.body.classList.remove('dark');
@@ -356,8 +354,8 @@
         }
         setTimeout(() => {
             knob.style.transform = theme === 'dark'
-                ? 'translateX(2px) scale(1)'
-                : 'translateX(0) scale(1)';
+                ? 'translateX(0.1vw) scale(1.1) rotate(360deg)'
+                : 'translateX(0) scale(1.1) rotate(-360deg)';
         }, 350);
         localStorage.setItem('theme', theme);
     }
