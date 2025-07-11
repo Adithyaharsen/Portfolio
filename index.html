@@ -51,11 +51,7 @@
         }
         .timeline-event .dot {
             width: 2vw;
-            max-width: 19px;
-            min-width: 9px;
             height: 2vw;
-            max-height: 19px;
-            min-height: 9px;
             background: #222;
             border-radius: 50%;
             border: 0.5vw solid #fff;
@@ -69,18 +65,14 @@
         }
         .timeline-event .date {
             font-size: 2vw;
-            min-font-size: 14px;
             font-weight: bold;
             margin-bottom: 1vw;
             color: #0078d7;
         }
         .timeline-event .desc {
             font-size: 1.7vw;
-            min-font-size: 12px;
             color: #333;
             text-align: center;
-            max-width: 22vw;
-            min-width: 120px;
         }
         .timeline-bar {
             position: absolute;
@@ -104,6 +96,19 @@
         .timeline-container::-webkit-scrollbar-thumb {
             background: #bbb;
             border-radius: 0.5vw;
+        }
+        @media (max-width: 600px) {
+            .timeline-container { padding: 6vw 0; }
+            .timeline { min-width: 100vw; height: 12vw; }
+            .timeline-event { min-width: 19vw; margin: 7vw 7vw 0 5vw; }
+            .timeline-bar { top: 6vw; }
+            .timeline-event .date { font-size: 2vw !important; }
+            .timeline-event .desc { font-size: 1.7vw !important; }
+            .timeline-event .dot { width: 2vw !important; height: 2vw !important; }
+            .chat-widget-container { bottom: 5vw; right: 5vw; width: 10vw; height: 10vw; }
+            div[name="first"] { flex-direction: column; align-items: flex-start !important; }
+            img[alt="Profile Picture"] { margin-left: 8vw; margin-top: 2vw; width: 12vw !important; height: 15vw !important; object-fit: cover; border:12px; }
+            h1 { font-size: 2.2vw !important; }
         }
         .chat-widget-container {
             position: fixed;
@@ -171,20 +176,6 @@
             .timeline { min-width: 900px; height: 38vw; }
             .timeline-event { min-width: 34vw; }
             .timeline-event .desc { max-width: 30vw; }
-        }
-        @media (max-width: 600px) {
-            .timeline-container { padding: 4vw 0; }
-            .timeline { min-width: 600px; height: 60vw; }
-            .timeline-event { min-width: 50vw; margin: 0 3vw; }
-            .timeline-event .desc { max-width: 40vw; }
-            .timeline-bar { top: 10vw; }
-            .chat-widget-container { bottom: 5vw; right: 5vw; }
-            div[name="first"] { flex-direction: column; align-items: flex-start !important; }
-            div[name="desc1"], div[name="desc2"] { min-width: 80vw !important; }
-            img[alt="Profile Picture"] { margin-left: 0; margin-right: 0; width: 60vw !important; height: 60vw !important; }
-            h1 { font-size: 8vw !important; }
-            .timeline-event .date, .timeline-event .desc { font-size: 3vw !important; }
-            .timeline-event .dot { width: 7vw !important; height: 7vw !important; }
         }
     </style>
 
@@ -312,10 +303,10 @@
     </div>
     <div style="margin: 8vw auto 8vw auto; width: 80vw;">
         <h2 style="color: #0078d7; border-bottom: 0.3vw solid #0078d7; padding-bottom: 1vw; margin-bottom: 4vw; font-size: 3vw;">Projects</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 4vw; justify-content: flex-start;">
+        <div style="display: flex; flex-wrap: wrap; gap: 10vw; justify-content: flex-start;">
             <!-- Project Card 4 -->
-            <div style="background: #fff; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 20vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
-                <img src="project4.png" alt="Project 4" style="width: 100%; height: 10vw; object-fit: cover; border-radius: 2vw;">
+            <div style="background: #fff; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 31vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
+                <img src="project4.png" alt="Project 4" style="width: 100%; height: 15vw; object-fit: contain; border-radius: 2vw;">
                 <h3 style="margin: 2vw 0 1vw 0; color: #0078d7; font-size: 1.5vw;">Portfolio Website</h3>
                 <div style="font-size: 1vw; color: #555; margin-bottom: 1vw;">June 2025</div><br><br>
                 <p style="color: #333; text-align: center; font-size: 1vw;">Personal portfolio website built with HTML, CSS and JavaScript along with the help of AI tools to showcase my skills and adaptability to the new and useful tools/technologies.<br><br><br><br>
@@ -323,8 +314,8 @@
                 </p>
             </div>
             <!-- Project Card 3 -->
-            <div style="background: #fff; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 20vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
-                <img src="project3.png" alt="Project 3" style="width: 100%; height: 10vw; object-fit: cover; border-radius: 2vw;">
+            <div style="background: #fff; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 31vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
+                <img src="project3.png" alt="Project 3" style="width: 100%; height: 15vw; object-fit: contain; border-radius: 2vw;">
                 <h3 style="margin: 2vw 0 1vw 0; color: #0078d7; font-size: 1.5vw;">Farm Monitor - Android App</h3>
                 <div style="font-size: 1vw; color: #555; margin-bottom: 1vw;">Jan-April 2025</div>
                 <p style="color: #333; text-align: center; font-size: 1vw;">Developed using React-Native, this app displays real-time data and it's previous data logs by retrieving from Thingspeak.<br>Which in turn receives 7 parameters of data collected and transmitted through IoT sensors from a remote field.<br>This app is also integrated with SVM(a Machine Learning Model) for Anomaly Detection.<br><br>
@@ -332,8 +323,8 @@
                 </p>
             </div>
             <!-- Project Card 2 -->
-            <div style="background: #fff; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 20vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
-                <img src="project2.jpg" alt="Project 2" style="width: 100%; height: 10vw; object-fit: cover; border-radius: 2vw;">
+            <div style="background: #fff; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 31vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
+                <img src="project2.png" alt="Project 2" style="width: 100%; height: 15vw; object-fit: contain; border-radius: 2vw;">
                 <h3 style="margin: 2vw 0 1vw 0; color: #0078d7; font-size: 1.5vw;">Online Compiler</h3>
                 <div style="font-size: 1vw; color: #555; margin-bottom: 1vw;">July 2024</div>
                 <p style="color: #333; text-align: center; font-size: 1vw;">Developed the frontend for an online compiler website using React.js , focusing on responsive UI and smooth user experience.<br>This online compiler can compile 6 different programming languages like javascript, typescript, Java, php and C#.<br><br><br>
@@ -341,8 +332,8 @@
                 </p>
             </div>
             <!-- Project Card 1 -->
-            <div style="background: #fff; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 20vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
-                <img src="project1.png" alt="Project 1" style="width: 100%; height: 10vw; object-fit: cover; border-radius: 2vw;">
+            <div style="background: #fff; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 31vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
+                <img src="project1.png" alt="Project 1" style="width: 100%; height: 15w; object-fit: contain; border-radius: 2vw;">
                 <h3 style="margin: 2vw 0 1vw 0; color: #0078d7; font-size: 1.5vw;">IPL Dashboard</h3>
                 <div style="font-size: 1vw; color: #555; margin-bottom: 1vw;">June 2024</div>
                 <p style="color: #333; text-align: center; font-size: 1vw;">Developed using various Spring Frameworks, React.js, Bootstrap and Rest API’s.<br>This website can categorize matches year-wise as well as team-wise.<br>It also has separate Team-Dashboard’s , Seasonal Points Table , Records (by Season and Overall) and more.<br>
