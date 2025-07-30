@@ -11,18 +11,12 @@
 <body>
     <style>
         html {
-            font-size: 16px;
-        }
-        @media (max-width: 900px) {
-            html { font-size: 14px; }
-        }
-        @media (max-width: 600px) {
-            html { font-size: 12px; }
+            font-size: 1vw;
         }
         .timeline-container {
-            margin: 4vw 3vw 0vw 4vw;
+            margin: 4vw 3vw 0vw 10vw;
             padding: 6vw 0;
-            width: 90vw;
+            width: 80vw;
             overflow-x: auto;
             overflow-y: hidden;
             white-space: nowrap;
@@ -34,7 +28,7 @@
         .timeline {
             display: flex;
             align-items: center;
-            height: 12vw;
+            height: 6vw;
             position: top;
         }
         .timeline-event {
@@ -47,8 +41,8 @@
             animation: fadeInUp 1s;
         }
         .timeline-event .dot {
-            width: 2vw;
-            height: 2vw;
+            width: 1vw;
+            height: 1vw;
             background: #222;
             border-radius: 50%;
             border: 0.5vw solid #fff;
@@ -61,13 +55,13 @@
             box-shadow: 0 0 0 1vw #0078d7;
         }
         .timeline-event .date {
-            font-size: 2vw;
+            font-size: 1vw;
             font-weight: bold;
             margin-bottom: 1vw;
             color: #0078d7;
         }
         .timeline-event .desc {
-            font-size: 1.7vw;
+            font-size: 0.8vw;
             color: #333;
             text-align: center;
         }
@@ -75,8 +69,8 @@
             position: absolute;
             top: 6vw;
             left: 0;
-            height: 0.5vw;
-            width: 208vw;
+            height: 0.3vw;
+            width: 140vw;
             background: linear-gradient(90deg, #0078d7 60%, #bbb 100%);
             z-index: 1;
             border-radius: 0.3vw;
@@ -86,25 +80,75 @@
             to { opacity: 1; transform: translateY(0);}
         }
         .timeline-container::-webkit-scrollbar {
-            height: 1vw;
+            height: 0.5vw;
         }
         .timeline-container::-webkit-scrollbar-thumb {
             background: #bbb;
             border-radius: 0.5vw;
         }
+        .dropdown-group {
+            width: 80vw;
+            margin: 5vw 8vw 0 10vw;
+            border-radius: 2vw;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            overflow: hidden;
+        }
+        .dropdown-section {
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .dropdown-header {
+            cursor: pointer;
+            padding: 2vw 3vw;
+            background: #f7f7f7;
+            font-size: 1.5vw;
+            color: #0078d7;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.2s;
+            user-select: none;
+        }
+        .dropdown-header:hover {
+            background: #eaf4fb;
+        }
+        .dropdown-arrow {
+            font-size: 0.8vw;
+            transition: transform 0.3s;
+        }
+        .dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(.4,0,.2,1);
+            background: #fff;
+            padding: 0 3vw;
+        }
+        .dropdown-section.open .dropdown-content {
+            padding: 1vw 5vw;
+            max-height: 100vh;
+            transition: max-height 0.5s cubic-bezier(.4,0,.2,1);
+        }
+        .dropdown-section.open .dropdown-arrow {
+            transform: rotate(90deg);
+        }
         @media (max-width: 900px) {
+            html { font-size: 1vw; }
             .timeline-container { padding: 6vw 0; }
-            .timeline { height: 12vw; }
+            .timeline { height: 6vw; }
             .timeline-event { margin: 7vw 7vw 0 5vw; }
             .timeline-bar { top: 6vw; width: 232vw; }
-            .timeline-event .date { font-size: 2vw !important; }
-            .timeline-event .desc { font-size: 1.7vw !important; }
-            .timeline-event .dot { width: 2vw !important; height: 2vw !important; }
+            .timeline-event .date { font-size: 1vw !important; }
+            .timeline-event .desc { font-size: 0.8vw !important; }
+            .timeline-event .dot { width: 1vw !important; height: 1vw !important; }
             .chat-widget-container { bottom: 5vw; right: 5vw; width: 10vw; height: 10vw; }
-            img[alt="Profile Picture"] { margin: 5vw 5vw 0vw 5vw; width: 12vw !important; height: 15vw !important; object-fit: cover; border:12px; }
-            h1 { font-size: 2vw !important; }
-            p { font-size: 1.7vw !important; }
-            li { font-size: 1.7vw !important; }
+            img[alt="Profile Picture"] { margin: 5vw 5vw 0vw 5vw; width: 6vw !important; height: 7vw !important; object-fit: cover; border:12px; }
+            h1 { font-size: 1vw !important; }
+            p { font-size: 0.8vw !important; }
+            li { font-size: 0.8vw !important; }
+            .dropdown-group { width: 80vw; margin: 3vw 3vw 0 3vw; }
+            .dropdown-header { font-size: 1.5vw; }
+            .dropdown-content, .dropdown-section.open .dropdown-content { font-size: 1vw; }
         }
         .chat-widget-container {
             position: fixed;
@@ -167,38 +211,48 @@
             background: #23272f !important;
             box-shadow: 0 2px 10px rgba(0,0,0,0.25) !important;
         }
+        body.dark .dropdown-group {
+            background: #23272f !important;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+        }
+        body.dark .dropdown-header {
+            background: #23272f !important;
+            color: #4eaaff !important;
+        }
+        body.dark .dropdown-content {
+            background: #23272f !important;
+            color: #e6e6e6 !important;
+        }
     </style>
-
-
-    <div style="position: fixed; top: 3vw; right: 8vw; z-index: 1000; display: flex; align-items: center; margin-top: 1vw;">
-        <span style="font-size: 2vw; color: #222; margin-right: 2vw;">Theme</span>
-        <button id="theme-toggle" style="width: 6vw; height: 3vw; border-radius: 50vw; border: 1px solid #bbb; background: #eee; cursor: pointer; display: flex; align-items: center; padding: 0.3vw; justify-content: flex-start; overflow: hidden; transition: background 0.3s, border 0.3s;">
-            <span id="toggle-knob" style="display: block; width: 2vw; height: 2vw; border-radius: 50%; background: #0078d7; box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: transform 0.35s cubic-bezier(.68,-0.55,.27,1.55), background 0.3s;"></span>
+    <div style="position: fixed; top: 1.5vw; right: 2vw; z-index: 1000; display: flex; align-items: center; margin-top: 1vw;">
+        <span style=" color: #222; margin-right: 0.5vw;">Theme</span>
+        <button id="theme-toggle" style="width: 3vw; height: 1.5vw; border-radius: 50vw; border: 1px solid #bbb; background: #eee; cursor: pointer; display: flex; align-items: center; padding: 0.3vw; justify-content: flex-start; overflow: hidden; transition: background 0.3s, border 0.3s;">
+            <span id="toggle-knob" style="display: block; width: 1vw; height: 1vw; border-radius: 50%; background: #0078d7; box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: transform 0.35s cubic-bezier(.68,-0.55,.27,1.55), background 0.3s;"></span>
         </button>
     </div>
     <div name="first" style="display:flex; flex-wrap: wrap; align-items:center">
         <img id="profile-pic" src="Photo.png" alt="Profile Picture"
                 style="
-                    width: 15vw;
-                    height: 15vw;
+                    width: 10vw;
+                    height: 10vw;
                     object-fit: cover;
                     border-radius: 50%;
                     display: block;
-                    margin: 5vw 5vw 1vw 5vw;
+                    margin: 2vw 10vw 1vw 15vw;
                     cursor: pointer;
                 ">
         <div name="desc1">
-            <h1 style="font-size: 2.2vw; ">Adithya Harsen R V</h1>
+            <h1 style="font-size: 1.5vw; ">Adithya Harsen R V</h1>
             <br>
-            <p style="font-size: 1.5vw;"><strong>Personal email:</strong> harsenadithya@gmail.com</p>
-            <p style="font-size: 1.5vw;"><strong>Phone:</strong> 9342456212</p>
-            <p style="font-size: 1.5vw;"><strong>Role:</strong> Web/App Developer</p>
+            <p style="font-size: 0.8vw;"><strong>Personal email:</strong> harsenadithya@gmail.com</p>
+            <p style="font-size: 0.8vw;"><strong>Phone:</strong> 9342456212</p>
+            <p style="font-size: 0.8vw;"><strong>Role:</strong> Web/App Developer</p>
         </div>
         <div style="width: 6vw; "></div>
         <div name="desc2">
             <br><br><br>
-            <p  style="font-size: 1.5vw;"><strong>College email:</strong> 126003009@sastra.ac.in</p>
-            <p  style="font-size: 1.5vw;"><strong>Whatsapp:</strong> 9486043779</p>
+            <p  style="font-size: 0.8vw;"><strong>College email:</strong> 126003009@sastra.ac.in</p>
+            <p  style="font-size: 0.8vw;"><strong>Whatsapp:</strong> 9486043779</p>
         </div>
     </div>
     <div id="photo-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background:rgba(0,0,0,0.4); backdrop-filter:blur(8px); align-items:center; justify-content:center;">
@@ -217,8 +271,8 @@
         };
     </script>
     <br><br>
-    <div style="display: flex; flex-wrap: wrap; align-items: center; font-size: 2vw; font-weight: bold;">
-        <a href="https://github.com/Adithyaharsen/" target="_blank" style="text-decoration:none; margin: 0vw 8vw 0vw 12vw;">Github</a>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; font-size: 1vw; font-weight: bold;">
+        <a href="https://github.com/Adithyaharsen/" target="_blank" style="text-decoration:none; margin: 0vw 8vw 0vw 20vw;">Github</a>
         <span style="margin: 0vw 4vw;">|</span>
         <a href="https://www.linkedin.com/in/adithya-harsen/" target="_blank" style="text-decoration:none; margin: 0vw 8vw 0vw 8vw;">LinkedIn</a>
         <span style="margin: 0 4vw;">|</span>
@@ -271,55 +325,86 @@
             </div>
         </div>
     </div>
-    <div style="margin-left: 8vw; margin-top:3vw; width: 80vw; ">
-        <section style="margin-bottom: 2vw;">
-            <h2 style="color: #0078d7; border-bottom: 0.3vw solid #0078d7; padding-bottom: 0.5vw; font-size: 2.2vw;">Education</h2>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
-                    <strong>B.Tech - Computer Science and Engineering</strong> - <span>SASTRA Deemed University</span> <br>
-                    <span style="color: #555;">2022 - Present</span> | <span style="color: #0078d7;">8.2482</span>
-                </li>
-                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
-                    <strong>12th Standard</strong> - <span>DNU SMBM National Public School</span> <br>
-                    <span style="color: #555;">2020 - 2022</span> | <span style="color: #0078d7;">96.6%</span>
-                </li>
-                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
-                    <strong>10th Standard</strong> - <span>Shri Gurumuki Vidhyasshram</span> <br>
-                    <span style="color: #555;">2009 - 2020</span> | <span style="color: #0078d7;">94%</span>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h2 style="color: #0078d7; border-bottom: 0.3vw solid #0078d7; padding-bottom: 0.5vw; font-size: 2.2vw;">Experience</h2>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
-                    <strong>Online Intern - Software Developer</strong> | <span>Fipsar Solutions</span> <br>
-                    <span style="color: #555;">July-August 2025</span>
-                </li>
-                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
-                    <strong>Android App Developer</strong> | <span>Mini-Project</span> <br>
-                    <span style="color: #555;">Jan-April 2025</span>
-                </li>
-                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
-                    <strong>Frontend Developer</strong> | <span>Tally Code Brewers Hackathon</span> <br>
-                    <span style="color: #555;">July 2024</span>
-                </li>
-                <li style="margin-bottom: 2vw; font-size: 1.5vw;">
-                    <strong>Summer Intern - Java Developer</strong> | <span>Interlace India</span> <br>
-                    <span style="color: #555;">June 2024</span>
-                </li>
-                <li style="font-size: 1.5vw;">
-                    <strong>Member</strong> | <span>KS Marketing and Corporate Relations, SASTRA</span> <br>
-                    <span style="color: #555;">2024 - Present</span>
-                </li>
-            </ul>
-        </section>
+
+    <div class="dropdown-group">
+        <div class="dropdown-section">
+            <div class="dropdown-header">
+                Experience
+                <span class="dropdown-arrow">&#9654;</span>
+            </div>
+            <div class="dropdown-content">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1.5vw; font-size: 0.8vw;">
+                        <strong>Online Intern - Software Developer</strong> | <span>Fipsar Solutions</span> <br>
+                        <span style="color: #555;">July-August 2025</span>
+                    </li>
+                    <li style="margin-bottom: 1.5vw; font-size: 0.8vw;">
+                        <strong>Android App Developer</strong> | <span>Mini-Project</span> <br>
+                        <span style="color: #555;">Jan-April 2025</span>
+                    </li>
+                    <li style="margin-bottom: 1.5vw; font-size: 0.8vw;">
+                        <strong>Frontend Developer</strong> | <span>Tally Code Brewers Hackathon</span> <br>
+                        <span style="color: #555;">July 2024</span>
+                    </li>
+                    <li style="margin-bottom: 1.5vw; font-size: 0.8vw;">
+                        <strong>Summer Intern - Java Developer</strong> | <span>Interlace India</span> <br>
+                        <span style="color: #555;">June 2024</span>
+                    </li>
+                    <li style="font-size: 0.8vw;">
+                        <strong>Member</strong> | <span>KS Marketing and Corporate Relations, SASTRA</span> <br>
+                        <span style="color: #555;">2024 - Present</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dropdown-section">
+            <div class="dropdown-header">
+                Education
+                <span class="dropdown-arrow">&#9654;</span>
+            </div>
+            <div class="dropdown-content">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1.5vw; font-size: 0.8vw;">
+                        <strong>B.Tech - Computer Science and Engineering</strong> - <span>SASTRA Deemed University</span> <br>
+                        <span style="color: #555;">2022 - Present</span> | <span style="color: #0078d7;">8.2482</span>
+                    </li>
+                    <li style="margin-bottom: 1.5vw; font-size: 0.8vw;">
+                        <strong>12th Standard</strong> - <span>DNU SMBM National Public School</span> <br>
+                        <span style="color: #555;">2020 - 2022</span> | <span style="color: #0078d7;">96.6%</span>
+                    </li>
+                    <li style="font-size: 0.8vw;">
+                        <strong>10th Standard</strong> - <span>Shri Gurumuki Vidhyasshram</span> <br>
+                        <span style="color: #555;">2009 - 2020</span> | <span style="color: #0078d7;">94%</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dropdown-section">
+            <div class="dropdown-header">
+                Certifications
+                <span class="dropdown-arrow">&#9654;</span>
+            </div>
+            <div class="dropdown-content">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1.5vw; font-size: 0.8vw;">
+                        <strong>AWS Cloud Certificate</strong><br>
+                        <span style="color: #555;">Learntube.ai</span>
+                    </li>
+                    <li style="font-size: 0.8vw;">
+                        <strong>Canva for Work</strong><br>
+                        <span style="color: #555;">Canva Design School</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
     </div>
-    <div style="margin: 8vw auto 8vw auto; width: 80vw;">
-        <h2 style="color: #0078d7; border-bottom: 0.3vw solid #0078d7; padding-bottom: 1vw; margin-bottom: 4vw; font-size: 3vw;">Projects</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 10vw; justify-content: flex-start;">
+
+    <div style="margin: 4vw auto 8vw 10vw; width: 80vw;">
+        <h2 style="color: #0078d7; text-align:center; padding-bottom: 1vw; margin-bottom: 1vw; font-size: 1.5vw;">Projects</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 3vw; justify-content: flex-start;">
             <!-- Project Card 4 -->
-            <div style="background: #fff; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 31vw; height: 33vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
+            <div style="background: #fff; margin-left: 3vw; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 31vw; height: 33vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
                 <img src="project4.png" alt="Project 4" style="width: 100%; height: 15vw; object-fit: contain; border-radius: 2vw;">
                 <h3 style="margin: 2vw 0 1vw 0; color: #0078d7; font-size: 1.5vw;">Portfolio Website</h3>
                 <div style="font-size: 1vw; color: #555; margin-bottom: 1vw;">June 2025</div>
@@ -337,7 +422,7 @@
                 </p>
             </div>
             <!-- Project Card 2 -->
-            <div style="background: #fff; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 31vw; height: 33vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
+            <div style="background: #fff; margin-left: 3vw; border-radius: 3vw; box-shadow: 0 2px 10px rgba(0,0,0,0.07); width: 31vw; height: 33vw; padding: 2vw; display: flex; flex-direction: column; align-items: center;">
                 <img src="project2.png" alt="Project 2" style="width: 100%; height: 15vw; object-fit: contain; border-radius: 2vw;">
                 <h3 style="margin: 2vw 0 1vw 0; color: #0078d7; font-size: 1.5vw;">Online Compiler</h3>
                 <div style="font-size: 1vw; color: #555; margin-bottom: 1vw;">July 2024</div>
@@ -357,38 +442,48 @@
         </div>
     </div>
     <script>
-    function setTheme(theme) {
-        const btn = document.getElementById('theme-toggle');
-        const knob = document.getElementById('toggle-knob');
-        if(theme === 'dark') {
-            document.body.classList.add('dark');
-            btn.classList.add('dark');
-            btn.style.justifyContent = 'flex-end';
-            knob.style.transform = 'translateX(1vw) scale(1.1) rotate(360deg)';
-            knob.style.background = '#4eaaff';
-        } else {
-            document.body.classList.remove('dark');
-            btn.classList.remove('dark');
-            btn.style.justifyContent = 'flex-start';
-            knob.style.transform = 'translateX(0) scale(1.1) rotate(-360deg)';
-            knob.style.background = '#0078d7';
+        // Dropdown logic
+        document.querySelectorAll('.dropdown-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const section = this.parentElement;
+                const isOpen = section.classList.contains('open');
+                document.querySelectorAll('.dropdown-section').forEach(sec => sec.classList.remove('open'));
+                if (!isOpen) section.classList.add('open');
+            });
+        });
+
+        // Toggle theme function
+        function setTheme(theme) {
+            const btn = document.getElementById('theme-toggle');
+            const knob = document.getElementById('toggle-knob');
+            if(theme === 'dark') {
+                document.body.classList.add('dark');
+                btn.classList.add('dark');
+                btn.style.justifyContent = 'flex-end';
+                knob.style.transform = 'translateX(1vw) scale(1.1) rotate(360deg)';
+                knob.style.background = '#4eaaff';
+            } else {
+                document.body.classList.remove('dark');
+                btn.classList.remove('dark');
+                btn.style.justifyContent = 'flex-start';
+                knob.style.transform = 'translateX(0) scale(1.1) rotate(-360deg)';
+                knob.style.background = '#0078d7';
+            }
+            setTimeout(() => {
+                knob.style.transform = theme === 'dark'
+                    ? 'translateX(0.1vw) scale(1.1) rotate(360deg)'
+                    : 'translateX(0) scale(1.1) rotate(-360deg)';
+            }, 350);
+            localStorage.setItem('theme', theme);
         }
-        setTimeout(() => {
-            knob.style.transform = theme === 'dark'
-                ? 'translateX(0.1vw) scale(1.1) rotate(360deg)'
-                : 'translateX(0) scale(1.1) rotate(-360deg)';
-        }, 350);
-        localStorage.setItem('theme', theme);
-    }
-    // On load, set theme from localStorage
-    (function() {
-        const theme = localStorage.getItem('theme') || 'light';
-        setTheme(theme);
-    })();
-    document.getElementById('theme-toggle').onclick = function() {
-        const isDark = document.body.classList.contains('dark');
-        setTheme(isDark ? 'light' : 'dark');
-    };
+        // On load, set theme from localStorage
+        (function() {
+            setTheme('dark');
+        })();
+        document.getElementById('theme-toggle').onclick = function() {
+            const isDark = document.body.classList.contains('dark');
+            setTheme(isDark ? 'light' : 'dark');
+        };
     </script>
     <script
         src="https://chatling.ai/js/embed.js"
