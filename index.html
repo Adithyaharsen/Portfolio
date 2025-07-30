@@ -132,12 +132,30 @@
         .dropdown-section.open .dropdown-arrow {
             transform: rotate(90deg);
         }
+        @media (max-width: 600px) {
+            html { font-size: 2vw; }
+            .timeline-container { padding: 12vw 0; }
+            .timeline { height: 12vw; }
+            .timeline-event { margin: 7vw 7vw 0 5vw; }
+            .timeline-bar { top: 6vw; width: 232vw; }
+            .timeline-event .date { font-size: 2vw !important; }
+            .timeline-event .desc { font-size: 1.7vw !important; }
+            .timeline-event .dot { width: 2vw !important; height: 2vw !important; }
+            .chat-widget-container { bottom: 5vw; right: 5vw; width: 10vw; height: 10vw; }
+            img[alt="Profile Picture"] { margin: 5vw 5vw 0vw 5vw; width: 12vw !important; height: 15vw !important; object-fit: cover; border:12px; }
+            h1 { font-size: 2vw !important; }
+            p { font-size: 1.5vw !important; }
+            li { font-size: 1.5vw !important; }
+            .dropdown-group { width: 80vw; margin: 3vw 3vw 0 3vw; }
+            .dropdown-header { font-size: 2.2vw; }
+            .dropdown-content, .dropdown-section.open .dropdown-content { font-size: 1.7vw; }
+        }
         @media (max-width: 900px) {
             html { font-size: 1vw; }
             .timeline-container { padding: 6vw 0; }
             .timeline { height: 6vw; }
             .timeline-event { margin: 7vw 7vw 0 5vw; }
-            .timeline-bar { top: 6vw; width: 232vw; }
+            .timeline-bar { top: 6vw; width: 240vw; }
             .timeline-event .date { font-size: 1vw !important; }
             .timeline-event .desc { font-size: 0.8vw !important; }
             .timeline-event .dot { width: 1vw !important; height: 1vw !important; }
